@@ -4,95 +4,134 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design for Bootstrap</title>
-  <!-- MDB icon -->
-  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
+  <title>Octopus - A Prety Stupit Qwiz</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- Google Fonts Roboto -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-  <!-- Bootstrap core CSS -->
+  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <!-- Material Design Bootstrap -->
   <link rel="stylesheet" href="css/mdb.min.css">
-  <!-- Your custom styles (optional) -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg">
+  <!-- Loading/Welcome Screen starts -->
+  <div class="loading-wrapper">
+    <!-- Bootstrap standard container -->
+    <div class="container">
+      <!-- Bootstrap row - Full height - Uses flexbox - Items aligned center both horizontal and vertical-->
+      <div class="row full-height d-flex justify-content-center align-items-center">
+        <!-- Bootstrap column, full width on all screen sizes-->
+        <div class="col-md-12">
+                  <!-- Class for some design tweaking -->
+                  <div class="start-page">
+                    <!-- Loading images, class for some extra controls -->
+                    <img class="octopus-load" src="https://github.com/gvestmann/octopus/raw/main/img/loading-animation.gif">
+                    <h2>I am the Octopus</h2>
+                    <p>I prety stupit qwiz made stardick HTML in the Java's crypt. 
+                    <p>I also have the Boot's Trap with som maternial dessign lookings. 
+                    <p>Or so my maker says.</p>
+                    <!-- Start button - Uses Bootstrap MD classes - Calls function upon click - Icons from Font Awesome-->
+                    <a href="#"><button id="start" onclick="stopLoading();" class="btn btn-purple start-btn">Start Quiz<i class="fas fa-play ml-3"></i></button></a>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <!-- Loading screen ends -->
+  <!-- Body's main content starts -->
+  <!-- Bootstrap standard container - Large margins-->
   <div class="container mt-5">
+    <!-- Bootstrap row - Uses flexbox, content justified center -->
     <div class="row d-flex justify-content-center">
-
+      <!-- Bootstrap column, full width on all devices -->
       <div class="col-md-12 d-flex justify-content-center">
+        <!-- Card class from Bootstrap MD, extra class from some tweaking -->
         <div class="card card__menu">
+          <!-- Card body class from Boostrap MD -->
           <div class="card-body d-flex justify-content-center">
+            <!-- "Navbar" with logo and refresh icon -->
               <img class="logo" src="img/ocotopus-logo.png">
               <h1>OCTOPUS</h1>
               <ul class="ml-auto mt-1">
-              <li><a class="refresh-quiz top-icons"><i class="fas fa-redo"></i></a></li>
-              <li><a class="add-quiz top-icons"><i class="fas fa-plus"></i></a></li>
+                <!-- Refresh button - Onclick it's calls the restart function -->
+                <li><a onclick="restartLoading();" class="refresh-quiz top-icons"><i class="fas fa-redo"></i></a></li>
               </ul>
           </div>
         </div>
       </div>
-
+      <!-- "Navbar" ends -->
+      <!-- Quiz container starts -->
+      <!-- Boostrap full width column on all screen sizes - Flexbox -->
       <div class="col-md-12 quiz-container d-flex justify-content-center">
+        <!-- Bootstrap MD's card class - Extra class for custom stuff -->
         <div class="card card__quiz">
           <div class="card-body">
-            <!--Carousel Wrapper-->
+            <!-- Carousel Wrapper - Classes and attributes to create carousel, rotate slides, and turn off autorotate -->
             <div id="carousel-example-1z" class="carousel slide" data-ride="carousel" data-interval="false">
+              <!-- More standard carousel classel from Bootstrap MD -->
               <div id="quiz-carousel" class="carousel-inner" role="listbox">
-                <div class="start-page">
-                  <h2>I am the Octopus</h2>
-                  <p>I prety dumb quiz made in stadick HTML and the Java's crypt. I also have the Boot's Trap with material dessign lookings. Or so my maker says.</p>
-                </div>
+
+                <!-- In here the questions will appear -->
+              
               </div>
             </div>
-
+            <!-- Last part of the quiz container - The navigation buttons-->
             <div class="controls-top">
+              <!-- Next question button, targets the carousel slide funtion - onclick calls function to count the questions answered -->
               <a href="#carousel-example-1z" data-slide="next"><button id="next" class="btn btn-purple" onclick="clicks++;countClicks();">Next Question<i class="fas fa-chevron-right ml-3"></i></button></a>
-              <a href="#"><button id="submit" data-toggle="modal" data-target="#centralModal" class="btn btn-purple">See Results<i class="fas fa-check ml-3"></i></button></a>
-              <a href="#"><button id="start" onclick="buildQuiz();" class="btn btn-purple">Start Quiz<i class="fas fa-play ml-3"></i></button></a>
+              <!-- Button for when user looks at correct answers - Pager style - Targets the next page slide -->
+              <a href="#carousel-example-1z" data-slide="next"><button id="pager-next" onclick="hideNext();" class="btn btn-purple">Next Page<i class="fas fa-chevron-right ml-3"></i></button></a>
+              <!-- Same as above, but for the previous page -->
+              <a href="#carousel-example-1z" data-slide="prev"><button id="pager-prev" onclick="hidePrev();" class="btn btn-purple"><i class="fas fa-chevron-left mr-3"></i>Previous Page</button></a>
+              <!-- The submit button which appear at the end of the quiz - Calls function to calculate and display results -->
+              <a href="#"><button id="submit" data-toggle="modal" data-target="#centralModal" class="btn btn-purple">See Results<i class="fas fa-check ml-3"></i></button></a>            
             </div>
-
           </div>
         </div>
       </div>
-
+      <!-- End of quiz content -->
+      <!-- The footer/counter starts -->
+      <!-- Column just like the two above, extra class for "last column"-->
       <div class="col-md-12 quiz-container d-flex justify-content-center last-column">
+        <!-- Again, card class -->
         <div class="card card__quiz">
           <div class="card-body text-center counter">
             <p>Hwurry up! You spend
+            <!-- This span is a placeholder for the javascript counter -->
             <span id="realtime"><strong>0:00:00</strong></span>
             on eazy, stupit qwiz.</p>
           </div>
         </div>
       </div>
- 
-
+      <!-- Footer ends -->
+    </div>
   </div>
-</div>
-
-<!-- Central Modal Medium -->
-<div class="modal fade" id="centralModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <!--Content-->
-    <div class="modal-content">
-      <!--Header-->
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"><i class="fas fa-times"></i></span>
-        </button>
-      </div>
-      <!--Body-->
-      <div class="modal-body">
-        <div class="results" id="results"></div>
+  <!-- End of page main content -->
+  <!-- Here's the pop-up with the results -->
+  <!-- Various classes from bootstrap MD for this modal to work on how to look -->
+  <div class="modal fade" id="centralModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <!-- The content, there's space for three different areas: header, body, footer. -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- Button inside the header to close the dialog -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="fas fa-times"></i></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Inside the body is where the results are display -->
+          <div class="results" id="results"></div>
+          <!-- Javascript displays results here -->
+        </div>
       </div>
     </div>
-    <!--/.Content-->
   </div>
-</div>
-<!-- Central Modal Medium -->
-
+  <!-- Pop-up ends -->
+  <!-- Various JS scripts -->
   <!-- jQuery -->
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <!-- Bootstrap tooltips -->
@@ -101,8 +140,8 @@
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
-  <!-- Your custom scripts (optional) -->
+  <!-- My custom script -->
   <script type="text/javascript" src="js/main.js"></script>
-
+<!-- And we're done! -->
 </body>
 </html>

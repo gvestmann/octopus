@@ -1,3 +1,29 @@
+/* GLOBAL FONTS & BASICS */
+
+h1 {
+    margin-left: 20px;
+    font-weight: 300 !important;
+    font-size: 40px;
+    margin-top: -2px;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 30px !important;
+    font-weight: 600 !important;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+ul li{
+    list-style-type: none;
+    display: inline;
+}
+
+
+/* LAYOUT ELEMENTS */
+
 body {
     min-height: 95vh;
     max-height: 100vh;
@@ -16,21 +42,22 @@ body {
     justify-content: flex-start;
 }
 
-ul li{
-    list-style-type: none;
-    display: inline;
+.last-column {
+    margin-bottom: 0;
+}
+
+.row {
+    margin-bottom: 0;
+}
+
+.top-icons {
+    font-size: 24px;
+    margin-left: 2rem;
 }
 
 .card__menu {
     height: 84px;
     width: 800px;
-}
-
-h1 {
-    margin-left: 20px;
-    font-weight: 300 !important;
-    font-size: 40px;
-    margin-top: -2px;
 }
 
 .card__quiz {
@@ -39,14 +66,6 @@ h1 {
     margin-top: 2rem;
 }
 
-h2 {
-    text-transform: uppercase;
-    font-size: 30px !important;
-    font-weight: 600 !important;
-    margin-top: 2rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-}
 .carousel-item {
     min-height: 320px;
 }
@@ -55,6 +74,9 @@ h2 {
     margin-left: 2rem;
     margin-top: 2rem;
 }
+
+
+/* RADIO BUTTONS */
 
 label {
     font-size: 20px !important;
@@ -128,6 +150,9 @@ label {
             transform: scale(1, 1);
 }
 
+
+/* BUTTONS */
+
 .controls-top {
     display: flex;
     justify-content: center;
@@ -139,18 +164,24 @@ label {
     color: white;
 }
 
-.top-icons {
-    font-size: 24px;
-    margin-left: 2rem;
-}
-
 #submit {
+display: none;
+}
+
+.start-btn {
+    margin-top: 1rem;
+}
+
+#pager-next {
     display: none;
 }
 
-#next {
+#pager-prev {
     display: none;
 }
+
+
+/* RESULTS POP-UP */ 
 
 .modal-header {
     border-bottom: none;
@@ -175,13 +206,16 @@ div.icons-results {
     margin-top: -1rem;
 }
 
-.start-page {
-    text-align: center;
+.correct-answers h2 {
+    margin-bottom: 2rem;
 }
 
-.start-page h2 {
-    margin-bottom: 3rem;
+.correct-answers p {
+    font-size: 20px;
 }
+
+
+/* COUNTER */
 
 #realtime {
     font-weight: 600;
@@ -192,10 +226,36 @@ div.icons-results {
     padding-top: 10px;
 }
 
-.last-column {
-    margin-bottom: 0;
+
+/* LOADING SCREEN */
+
+.loading-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 10000;
+    margin-top: -50px;
+}  
+
+.start-page {
+    text-align: center;
+    width: 100%;
 }
 
-.row {
-    margin-bottom: 0;
+.start-page h2 {
+    margin-bottom: 1rem;
+    margin-top: -1rem;
+}
+
+.start-page p {
+    margin-bottom: 6px;
+}
+
+.octopus-load {
+    height: 300px;
+}
+
+.full-height {
+    height: 100vh;
 }
