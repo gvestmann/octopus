@@ -19,14 +19,79 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg">
-  <div class="container h-100 mt-5">
-    <div class="row h-100">
-      <div class="col-md-12 bg">
-        <p>Text</p>
+  <div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+
+      <div class="col-md-12 d-flex justify-content-center">
+        <div class="card card__menu">
+          <div class="card-body d-flex justify-content-center">
+              <img class="logo" src="img/ocotopus-logo.png">
+              <h1>OCTOPUS</h1>
+              <ul class="ml-auto mt-1">
+              <li><a class="refresh-quiz top-icons"><i class="fas fa-redo"></i></a></li>
+              <li><a class="add-quiz top-icons"><i class="fas fa-plus"></i></a></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12 quiz-container d-flex justify-content-center">
+        <div class="card card__quiz">
+          <div class="card-body">
+            <!--Carousel Wrapper-->
+            <div id="carousel-example-1z" class="carousel slide" data-ride="carousel" data-interval="false">
+              <div id="quiz-carousel" class="carousel-inner" role="listbox">
+                <div class="start-page">
+                  <h2>I am the Octopus</h2>
+                  <p>I prety dumb quiz made in stadick HTML and the Java's crypt. I also have the Boot's Trap with material dessign lookings. Or so my maker says.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="controls-top">
+              <a href="#carousel-example-1z" data-slide="next"><button id="next" class="btn btn-purple" onclick="clicks++;countClicks();">Next Question<i class="fas fa-chevron-right ml-3"></i></button></a>
+              <a href="#"><button id="submit" data-toggle="modal" data-target="#centralModal" class="btn btn-purple">See Results<i class="fas fa-check ml-3"></i></button></a>
+              <a href="#"><button id="start" onclick="buildQuiz();" class="btn btn-purple">Start Quiz<i class="fas fa-play ml-3"></i></button></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12 quiz-container d-flex justify-content-center last-column">
+        <div class="card card__quiz">
+          <div class="card-body text-center counter">
+            <p>Hwurry up! You spend
+            <span id="realtime"><strong>0:00:00</strong></span>
+            on eazy, stupit qwiz.</p>
+          </div>
+        </div>
+      </div>
+ 
+
+  </div>
+</div>
+
+<!-- Central Modal Medium -->
+<div class="modal fade" id="centralModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="fas fa-times"></i></span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body">
+        <div class="results" id="results"></div>
       </div>
     </div>
+    <!--/.Content-->
   </div>
-
+</div>
+<!-- Central Modal Medium -->
 
   <!-- jQuery -->
   <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -37,7 +102,7 @@
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <!-- Your custom scripts (optional) -->
-  <script type="text/javascript"></script>
+  <script type="text/javascript" src="js/main.js"></script>
 
 </body>
 </html>
