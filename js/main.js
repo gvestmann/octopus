@@ -1,17 +1,17 @@
 // The questions in an object
 const myQuestions = [
   {
-      question: "Haw manny hearts octopus have?",
+      question: "Haw manny hearts octopus hav?",
       answers: {
-          a: "It have no heart",
-          b: "It have 3 heart",
-          c: "It have 1 heart, wat do think, mann?",
+          a: "It hav no heart",
+          b: "It hav 3 heart",
+          c: "It hav 1 heart, wat do think, mann?",
           d: "It has 8 heart - 1 for eatch tentacle"
           },
       correctAnswer: "b"
   },
   {
-  question: "Haw manny sucksions cups ocotopus have?",
+  question: "Haw manny sucksions cups ocotopus hav?",
   answers: {
       a: "Up two 8-ty",
       b: "Up two 1-hundrund 8-ty",
@@ -31,11 +31,11 @@ const myQuestions = [
       correctAnswer: "d"
   },
   {
-    question: "Who Otto the Octopus an why so verry faymous?",
+    question: "Who Otto the Octopus an why so verry faymus?",
     answers: {
-        a: "He verry old octopus, probably older thenn Santa",
+        a: "He verry old octopus, probly older thenn Santa",
         b: "He verry big octopus, cann probably eat cat with 1 byte",
-        c: "He verry smart octopus, somtime take electricyty from stupid building",
+        c: "He verry smart octopus, somtime take electricyty from stupit building",
         d: "He verry strange octopus, has two manny leg and wird color."
         },
     correctAnswer: "c"
@@ -44,19 +44,19 @@ const myQuestions = [
     question: "Wat Aristoteles say on octopus?",
     answers: {
         a: "He stupit mann, say octopus dumb",
-        b: "He say nothing about octopus",
+        b: "He say noting about octopus",
         c: "He say octopus wisstom animal",
-        d: "He dangirous mann, say octopus hiss best food"
+        d: "He dangirus mann, say octopus hiss best food"
         },
     correctAnswer: "a"
   },
   {
-    question: "What color octopus blood?",
+    question: "Wat color octopus blood?",
     answers: {
-        a: "It has blue color",
-        b: "It has black color",
-        c: "It has no color",
-        d: "It has red color"
+        a: "It blu",
+        b: "It black",
+        c: "It hav no color",
+        d: "It red, stupit"
         },
     correctAnswer: "a"
   }
@@ -186,7 +186,7 @@ function displayResults() {
     }
   else if(scorePerCent >= 25){
     resultsContainer.innerHTML = 
-    `<h2>You stupid!</h2>
+    `<h2>You stupit!</h2>
     <div class="icons-results"><i class="far fa-grin-squint-tears"></i></div>
     <p>You only get <strong>${numCorrect}</strong> out of <strong>${myQuestions.length}</strong> question write.</p>
     <a href="#"><button id="correct-answers" class="btn btn-purple" onclick="showCorrectAnswers();">Show Correct Answers<i class="far fa-lightbulb ml-3"></i></button></a>
@@ -205,6 +205,7 @@ function displayResults() {
   } 
   // And finally the function is generated
   displayResults();
+  clearInterval(timer);
 }
 
 // This part is for making the submit button available to the user at the end of the quiz and hiding the next question button 
@@ -287,6 +288,7 @@ function showCorrectAnswers() {
   document.getElementById('pager-next').style.display = "block";
   document.getElementById('submit').style.display = "none";
   document.getElementById('pager-prev').style.display = "none"; 
+  $('#centralModal').modal('hide');
   quizContainer.innerHTML = `
   <div class="carousel-item active">
   <div class="correct-answers text-center">
